@@ -6,7 +6,7 @@
 /*   By: jocaille <jocaille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 15:31:27 by jocaille          #+#    #+#             */
-/*   Updated: 2020/06/30 20:57:42 by user42           ###   ########.fr       */
+/*   Updated: 2020/07/05 17:30:24 by jocaille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,33 +22,39 @@
 # define HEXA_L "0123456789abcdef"
 # define HEXA_U "0123456789ABCDEF"
 
-typedef struct  s_params
+typedef struct	s_padd
 {
-    char    *str;
-    va_list va;
-    char    type;
-    int     minus;
-    int     zero;
-    int     prec;
-    int     prec_val;
-    int     width;
-    int     len;
-}               t_params;
+	int		sp;
+	int		zeros;
+}				t_padd;
 
-int             ft_printf(const char *format, ...);
+typedef struct	s_params
+{
+	char	*str;
+	va_list	va;
+	char	type;
+	int		minus;
+	int		zero;
+	int		prec;
+	int		prec_val;
+	int		width;
+	int		len;
+}				t_params;
 
-void            parse_flags(t_params *p);
-void            parse_width(t_params *p);
-void            parse_prec(t_params *p);
-void            parse_type(t_params *p);
+int				ft_printf(const char *format, ...);
 
-void            print_c(t_params *p);
-void            print_s(t_params *p);
-void            print_p(t_params *p);
-void            print_int(t_params *p);
-void            print_hexa(t_params *p, int maj);
-void            print_uint(t_params *p);
+void			parse_flags(t_params *p);
+void			parse_width(t_params *p);
+void			parse_prec(t_params *p);
+void			parse_type(t_params *p);
 
-void            init_params(t_params *p);
+void			print_c(t_params *p, t_padd *padd);
+void			print_s(t_params *p, t_padd *padd);
+void			print_p(t_params *p, t_padd *padd);
+void			print_int(t_params *p, t_padd *padd);
+void			print_hexa(t_params *p, t_padd *padd, int maj);
+void			print_uint(t_params *p, t_padd *padd);
+
+void			init_params(t_params *p, t_padd *padd);
 
 #endif

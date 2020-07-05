@@ -6,16 +6,16 @@
 /*   By: jocaille <jocaille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 15:44:29 by jocaille          #+#    #+#             */
-/*   Updated: 2020/06/01 15:44:29 by jocaille         ###   ########.fr       */
+/*   Updated: 2020/07/05 18:04:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_min(int a, int b)
+int	ft_min(int a, int b)
 {
-    if (a <= b)
-        return (a);
-    else
-        return (b);    
+	if (a <= b)
+		return (a);
+	else
+		return (b);
 }

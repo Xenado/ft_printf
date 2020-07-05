@@ -6,7 +6,7 @@
 /*   By: jocaille <jocaille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 12:18:12 by jocaille          #+#    #+#             */
-/*   Updated: 2020/06/04 17:06:31 by jocaille         ###   ########.fr       */
+/*   Updated: 2020/07/05 18:15:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 
-int 				ft_min(int a, int b);
+int					ft_min(int a, int b);
 int					ft_max(int a, int b);
 
 int					ft_toupper(int c);

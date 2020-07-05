@@ -6,16 +6,16 @@
 /*   By: jocaille <jocaille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 15:47:40 by jocaille          #+#    #+#             */
-/*   Updated: 2020/06/01 15:47:40 by jocaille         ###   ########.fr       */
+/*   Updated: 2020/07/05 18:05:57 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "libft.h"
+#include "libft.h"
 
-int ft_max(int a, int b)
+int	ft_max(int a, int b)
 {
-    if (a >= b)
-        return (a);
-    else
-        return (b);
+	if (a >= b)
+		return (a);
+	else
+		return (b);
 }
