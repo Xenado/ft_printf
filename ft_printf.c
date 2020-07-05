@@ -51,6 +51,7 @@ int			ft_printf(const char *format, ...)
 {
 	t_params	*p;
 	t_padd		*padd;
+	int		len;
 
 	if (!(p = malloc(sizeof(t_params))))
 		return (0);
@@ -60,7 +61,6 @@ int			ft_printf(const char *format, ...)
 	va_start(p->va, format);
 	p->len = 0;
 	while (*(p->str))
-	{
 		if (*(p->str) != '%')
 		{
 			write(1, p->str, 1);
@@ -69,8 +69,9 @@ int			ft_printf(const char *format, ...)
 		}
 		else
 			print_param(p, padd);
-	}
 	va_end(p->va);
 	free(padd);
-	return (p->len);
+	len = p->len;
+	free(p);
+	return (len);
 }
