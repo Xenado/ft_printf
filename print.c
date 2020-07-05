@@ -6,7 +6,7 @@
 /*   By: user42 <jocaille@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/05 17:41:54 by user42            #+#    #+#             */
-/*   Updated: 2020/07/05 18:20:16 by jocaille         ###   ########.fr       */
+/*   Updated: 2020/07/05 18:39:10 by jocaille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		print_s(t_params *p, t_padd *padd)
 	str = va_arg(p->va, char *);
 	if (str == NULL)
 	{
-		if (p->prec && p->prec_val < 7)
+		if (p->prec && p->prec_val < 6)
 			str = ft_strdup("");
 		else
 			str = ft_strdup("(null)");

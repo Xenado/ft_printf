@@ -6,28 +6,11 @@
 /*   By: jocaille <jocaille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 15:30:59 by jocaille          #+#    #+#             */
-/*   Updated: 2020/07/05 18:01:32 by user42           ###   ########.fr       */
+/*   Updated: 2020/07/05 18:36:01 by jocaille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-static void	print_mod(t_params *p, t_padd *padd)
-{
-	char	c;
-
-	c = '%';
-	padd->sp = p->width - 1;
-	if (p->minus)
-		ft_putchar_fd(c, 1);
-	if (padd->sp > 0)
-		p->len += padd->sp;
-	while (padd->sp-- > 0)
-		ft_putchar_fd(' ', 1);
-	if (!p->minus)
-		ft_putchar_fd(c, 1);
-	p->len++;
-}
 
 static void	print_type(t_params *p, t_padd *padd)
 {
@@ -46,7 +29,10 @@ static void	print_type(t_params *p, t_padd *padd)
 	else if (p->type == 'X')
 		print_hexa(p, padd, 1);
 	else if (p->type == '%')
-		print_mod(p, padd);
+	{
+		write(1, "%", 1);
+		p->len++;
+	}
 }
 
 static void	print_param(t_params *p, t_padd *padd)
