@@ -112,7 +112,7 @@ void		print_p(t_params *p, t_padd *padd)
 	str = ft_ptos(ptr, 0);
 	flag = str == NULL ? 2 : 0;
 	if (str == NULL)
-		str = ft_strdup("(nil)");
+		str = ft_strdup(P_NULL);
 	len = ft_strlen(str);
 	padd->zeros = 0;
 	if (p->zero && p->width > len + 2 - flag)
