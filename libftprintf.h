@@ -19,6 +19,12 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+# ifdef __APPLE__
+#  define P_NULL "0x0"
+# else
+#  define P_NULL "(nil)"
+# endif
+
 # define HEXA_L "0123456789abcdef"
 # define HEXA_U "0123456789ABCDEF"
 
